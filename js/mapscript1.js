@@ -3,7 +3,7 @@ var map = L.map('map').setView([30.06, 30.94], 13);
 // 2. Add OpenStreetMap tile layers to the map
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
 	}).addTo(map);
     
 // 3. Place an initial marker on the map
