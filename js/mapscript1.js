@@ -8,9 +8,9 @@
         window.addEventListener("resize", set_viewport);
 
         const map = new L.Map("map", {
-            center: [25.0487037, 121.5143449],
-            zoom: 13,
-            zoomControl: false,
+            center: [30.06, 30.94],
+            zoom: 15,
+            
         });
 
 
@@ -40,29 +40,75 @@ document.getElementById('button').addEventListener('click', function() {
     }
 
     // Smoothly pan and zoom to the user coordinates
-    map.flyTo([lat, long], 12);
+    map.flyTo([lat, long], 15);
 
     // Relocate the marker to the new coordinates
     marker.setLatLng([lat, long]);
 });
 
 
-//Current location
+// inserts and listeners
 
+
+var marker = L.marker([30.07, 30.961]).addTo(map)
+		.bindPopup('<b>Entered location</b><br />popup.').openPopup();
+
+	const circle = L.circle([30.061, 30.938], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 50
+	}).addTo(map).bindPopup('I am a circle.');
+
+	const polygon = L.polygon([
+		[51.509, -0.08],
+		[51.503, -0.06],
+		[51.51, -0.047]
+	]).addTo(map).bindPopup('I am a polygon.');
+
+
+	const popup = L.popup()
+		.setLatLng([30.06, 30.94])
+		.setContent('Sondos Location popup.')
+		.openOn(map);
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent(`You clicked the map at ${e.latlng.toString()}`)
+			.openOn(map);
+	}
+
+	map.on('click', onMapClick);
+
+
+//
+
+
+
+
+
+//Current location
+ var latlngf
  const control = new L.Control.SimpleLocate({
             position: "topleft",
-            className: "button-locate",
+              className: "button-locate",
+
+              // zoomlevel for current location
+              zoomLevel:16,
             afterClick: (result) => {
                 console.log("afterClick", result);
                 if (!result.geolocation) console.log("Geolocation Error");
                 if (!result.orientation) console.log("Orientation Error");
+                 
             },
             afterMarkerAdd: () => {
                 console.log("afterMarkerAdded");
                 const elem = document.getElementById("leaflet-simple-locate-icon-spot");
                 if (elem) {
                     elem.addEventListener("click", (event) => {
-                        const latlng = control.getLatLng();
+                       const latlng = control.getLatLng();
+                        
                         const latlng_str = `geolocation: [${Math.round(latlng.lat * 100000) / 100000}, ${Math.round(latlng.lng * 100000) / 100000}]`;
 
                         const accuracy = control.getAccuracy();
@@ -72,21 +118,26 @@ document.getElementById('button').addEventListener('click', function() {
                         const angle_str = `orientation: ${Math.round(angle)} degree`;
 
                         L.popup()
-                            .setLatLng(latlng)
+                          .setLatLng(latlng)
+                             
                             .setContent(`<p style="margin: 0.25rem 0 0.25rem 0">${latlng_str}</p><p style="margin: 0.25rem 0 0.25rem 0">${accuracy_str}</p><p style="margin: 0.25rem 0 0.25rem 0">${angle_str}</p>`)
-                            .openOn(map);
-
+                           .openOn(map);
+ 
                         event.stopPropagation();
                         event.preventDefault();
+                         
                     });
+                 
                 }
             },
             // afterDeviceMove: (event) => {
             //     console.log(event);
             // }
-        }).addTo(map);
-
-        map.on("locationfound", (event) => console.log(event));
+            
+        }) .addTo(map);
+       
+       
+         map.on("locationfound", (event) => console.log(event));
         map.on("locationerror", (event) => console.log(event));
         L.DomEvent.on(window, "ondeviceorientationabsolute" in window ? "deviceorientationabsolute" : "deviceorientation", (event) => console.log(event));
 
