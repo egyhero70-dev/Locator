@@ -1,37 +1,3 @@
-//firebase init
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-const firebaseConfig = {
-  // ...
-  // The value of `databaseURL` depends on the location of the database
-"type": "service_account",
-  "project_id": "sondosloc",
-  "private_key_id": "f10e228c9b5188da3be2276a14232e7e5a25b95a",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDT/3y75kxKkPEt\nxJ86iTkAYhYXIYAm1mP4ZlCaeDPPBoX6NFXC9kN9m3qQ0JmVq2nCqNfOCK32+SD9\n54AXbJIwvecVaBdchxDFUm4TNgqb+Xe6ln0LE2dICOUMYVeZlPoxIqjOO4jE7QN+\nWJzbhVps/UCppzKzSG02xc2WK7aoZw6mQcHF6ezjtr9qTbcj5wo2G18h/weW1I60\nsw49IwauS50BUo0SfEZxuLicBNK/NFY+djoegsXRD5B+mYsc/jojFWH2Z5mFAhHG\nnrUmh+emndxoyODstHJd1/7Zt29faZSC7jPkpG4RGWk1gu42FrjBFD3o+w2ZGMaH\n6qMlDDBRAgMBAAECggEAEOw6mUc7fNJQJk6lRUdx8OljiQooEDGZ/liwg3wn6pVD\nOaNW2z7MSWkRYiD8uZla0mqm+2/u7yGY9Bu4OmZ0zwZBvZA3GTBA8vdvCQKN20CR\nQahEqA8u9e2b1x6oHv7o7+Yr4naXJt0io8HQF6fv/XZD5KcPoYcdDLvCewPXS171\ndmrdcVeBdO73Pbp9lEfvd6pqN/rFYRDHUFDD8KhPY1GBjJouEpa/OtJ054ipQXY1\nHTGY/n1GbmSLbUMcNuqPgL28gpMSEYY7r3kLCHEyKJGEj6ANbnyIyxIujeE9p+oB\nKmXHyb0CbQUSVt3YnD7Oqt0OEiRXdk2jPocHeZKzDwKBgQDseMglDI3lo0+Yu8UN\nlG4tLED7++AWyM1qk7l/IOUbEqSzdwUz+/Du2ZeMR/TaR5az9BYdC6dNq+cSLsJb\nmKbpMYpE/LLMh2C3LvQr8ozhT6NrfdGf7vMkUK2TX6ztbZINJz1B0s/Ky9d4zqM5\nDp+He6J2H5JC1IeMAcObj/g9JwKBgQDlgU7ZtemB4k5VNXV9T31gsP57ZqpvVSC9\nXLIBJ9O7CM4jvgn7OAYzYSSJ3eg/Bkke4ddhv64ispRgw9Zto0dRkJ4DlnalqtfU\n/dq2JmPclfj9vm4WkDFZ0KKYsGSFQ8AJTt9/XdwqZrqRsUT6dxX21da8NEMCePV3\n4S5xbByBxwKBgQDlRuqP+Y8vY1vOs+iIlS0KQYk0iO+qR8HbnyXQ3F0nFbl5hGIY\nGCRwAauNyUrfxV+aVYSHXwA1MAKYP5wU4XqcSXtODlFyO6SLmEwIvGDaKLRDibeR\nQUagJFVXugFaJ83fUPd09eihMWlW6cuai9Ijs70+mLfgcl6GYkN9dmbzKwKBgDeL\nPP8ZtKK3l4etwXqLY2ekTmKlLTh2nM7XgUkgT3Djp6gk1RuUqoOCzioDp7KhHc84\njzzb/BPvrlNg8iNksdz+qA9sOdjMaSHmMimFTwPS1AjtLo2NZjQ7dy6G+jz6cZ6P\nFS4pFCC67gpWocAQVCOCC09PQqx1g8r4l5nhtWB/AoGAfzdDBspSTb9KbkXgwuez\n6/awhQnl7QZ2SnArnqS6qZ3TLlWkmCGAy4CBoq+G1qhjMkkyQkHjaddgnFul3eFO\nwKh3e0u0j0Bs7LZ46IvYMxKpHpDuZ7yHRy92YfxSau+hzg6aJO4xbxfXSFEs2UP8\nf8/c0G01Vu+9HN3aBmtT0Yo=\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-27qb3@sondosloc.iam.gserviceaccount.com",
-  "client_id": "104786136044429593765",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-27qb3%40sondosloc.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-	
-  databaseURL: "https://sondosloc-default-rtdb.firebaseio.com/",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-// Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
-
-
-
-//
 
 
 
