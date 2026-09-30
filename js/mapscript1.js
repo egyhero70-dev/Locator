@@ -21,7 +21,10 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+ 
 
+// Initialize and reference the Realtime Database service
+const database = getDatabase(app);
 
 //
 
@@ -79,7 +82,7 @@ document.getElementById('dbf').addEventListener('click', function() {
     // Parse the values from the input fields
     var dbval = (document.getElementById('dbb').value);
 	alert(dbval);
-	var database = firebase.database();
+	//var database = firebase.database();
 	
 firebase.database().ref('testme').set({
     ff: dbval,
