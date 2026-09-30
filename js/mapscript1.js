@@ -91,9 +91,9 @@ document.getElementById('button').addEventListener('click', function() {
 
 // db insert button
 
-document.getElementById('button').addEventListener('click', function() {
+document.getElementById('dbf').addEventListener('click', function() {
     // Parse the values from the input fields
-    var lat = parseFloat(document.getElementById('dbf').value);
+    var lat = parseFloat(document.getElementById('dbb').value);
    import { getDatabase, ref, set } from "firebase/database";
 
 function writeUserData(name) {
