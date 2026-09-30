@@ -89,6 +89,29 @@ document.getElementById('button').addEventListener('click', function() {
 });
 
 
+// db insert button
+
+document.getElementById('button').addEventListener('click', function() {
+    // Parse the values from the input fields
+    var lat = parseFloat(document.getElementById('dbf').value);
+   import { getDatabase, ref, set } from "firebase/database";
+
+function writeUserData(name) {
+  const db = getDatabase();
+  set(ref(db, 'testme'), {
+    ff: name,
+ 
+   
+  });
+}
+
+ 
+});
+
+
+
+//
+
 // inserts and listeners
 
 
