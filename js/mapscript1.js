@@ -1,12 +1,5 @@
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
- 
-
-// Initialize and reference the Realtime Database service
-const database = getDatabase(app);
-
+  
 //
 
 "use strict";
