@@ -1,4 +1,4 @@
-"use strict";
+  "use strict";
 
         function set_viewport() {
             document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
@@ -7,10 +7,15 @@
         set_viewport();
         window.addEventListener("resize", set_viewport);
 
+        const map = new L.Map("map", {
+            center: [25.0487037, 121.5143449],
+            zoom: 13,
+            zoomControl: false,
+        });
 
 
 
-var map = L.map('map').setView([30.06, 30.94], 13);
+//var map = L.map('map').setView([30.06, 30.94], 13);
 
 // 2. Add OpenStreetMap tile layers to the map
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -44,8 +49,7 @@ document.getElementById('button').addEventListener('click', function() {
 
 //Current location
 
-
-        const control = new L.Control.SimpleLocate({
+ const control = new L.Control.SimpleLocate({
             position: "topleft",
             className: "button-locate",
             afterClick: (result) => {
@@ -85,7 +89,6 @@ document.getElementById('button').addEventListener('click', function() {
         map.on("locationfound", (event) => console.log(event));
         map.on("locationerror", (event) => console.log(event));
         L.DomEvent.on(window, "ondeviceorientationabsolute" in window ? "deviceorientationabsolute" : "deviceorientation", (event) => console.log(event));
-
 
 
 
