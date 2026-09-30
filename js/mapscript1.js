@@ -93,18 +93,13 @@ document.getElementById('button').addEventListener('click', function() {
 
 document.getElementById('dbf').addEventListener('click', function() {
     // Parse the values from the input fields
-    var lat = parseFloat(document.getElementById('dbb').value);
+    var dbval = parseFloat(document.getElementById('dbb').value);
    import { getDatabase, ref, set } from "firebase/database";
 
-function writeUserData(name) {
-  const db = getDatabase();
-  set(ref(db, 'testme'), {
-    ff: name,
- 
-   
+firebase.database().ref('testme').set({
+    ff: dbval,
+  
   });
-}
-
  
 });
 
