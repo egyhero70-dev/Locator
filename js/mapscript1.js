@@ -88,10 +88,15 @@ document.getElementById('button').addEventListener('click', function() {
 
 
 // db insert button
+document.getElementById('dbf').addEventListener('click', function() {
+    // Parse the values from the input fields
+    var dbval = parseFloat(document.getElementById('dbb').value);
+firebase.database().ref('testme').set({
+    ff: dbval,
+  
+  });
 
-
-
-
+});
 
 //
 
