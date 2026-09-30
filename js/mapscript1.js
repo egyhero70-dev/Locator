@@ -18,8 +18,6 @@ const firebaseConfig = {
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-27qb3%40sondosloc.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
-
-
 	
   databaseURL: "https://sondosloc-default-rtdb.firebaseio.com/",
 };
@@ -94,8 +92,7 @@ document.getElementById('button').addEventListener('click', function() {
 document.getElementById('dbf').addEventListener('click', function() {
     // Parse the values from the input fields
     var dbval = parseFloat(document.getElementById('dbb').value);
-   import { getDatabase, ref, set } from "firebase/database";
-
+   
 firebase.database().ref('testme').set({
     ff: dbval,
   
