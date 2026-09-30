@@ -56,7 +56,7 @@ document.getElementById('button').addEventListener('click', function() {
 // db insert button
 document.getElementById('dbf').addEventListener('click', function() {
     // Parse the values from the input fields
-    var dbval = parseFloat(document.getElementById('dbb').value);
+    var dbval = (document.getElementById('dbb').value);
 	alert(dbval);
 	var database = firebase.database();
 	
