@@ -17,18 +17,24 @@
      <script src="js/leaflet/dist/leaflet.js"></script>  
   <script src="js/leaflet/dist/leaflet-simple-locate.min.js"></script>
 		 <link rel="stylesheet" href="js/leaflet/dist/demo.css" />
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 800px;
-			width: 1200px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-	</style>
+	 <style>
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            --primary-rgb: 25, 135, 84;
+        }
+
+        #map {
+            height: calc(var(--vh, 1vh) * 100);
+            width: 100vw;
+            /* transform: rotate(var(--leaflet-simple-locate-orientation, 0deg)); */
+        }
+    </style>
 
 	
 </head>
